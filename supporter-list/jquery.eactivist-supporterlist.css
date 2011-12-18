@@ -1,0 +1,36 @@
+.thermometer{
+	position:relative;
+	color:white;
+}
+	.thermometer .t_body{
+		border:1px solid #919191;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		height:24px;
+		padding:1px;
+		position:relative;
+		overflow:hidden;		
+	}
+		.thermometer .t_level{
+			width:0%;
+			float:left;
+			overflow:hidden;
+			background-color:#E8510A;
+			height:24px;
+			background: #e8510a;
+			background: -moz-linear-gradient(top, #e8510a 0%, #e8510a 50%, #da4c09 51%, #da4c09 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8510a), color-stop(50%,#e8510a), color-stop(51%,#da4c09), color-stop(100%,#da4c09));
+			background: -webkit-linear-gradient(top, #e8510a 0%,#e8510a 50%,#da4c09 51%,#da4c09 100%)
+			background: -o-linear-gradient(top, #e8510a 0%,#e8510a 50%,#da4c09 51%,#da4c09 100%);
+			background: -ms-linear-gradient(top, #e8510a 0%,#e8510a 50%,#da4c09 51%,#da4c09 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8510a', endColorstr='#da4c09',GradientType=0 );
+			background: linear-gradient(top, #e8510a 0%,#e8510a 50%,#da4c09 51%,#da4c09 100%);
+		}
+		.thermometer .t_body .t_current{
+			font-family: Arial, sans-serif;
+			font-size:18px;
+			line-height:20px;
+			position:absolute;
+			color:white;
+			margin-left:-80px;
+		}
