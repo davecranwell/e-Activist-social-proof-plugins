@@ -48,8 +48,11 @@
 			//get the data and iterate through it
 			$.getJSON(dataUrl, function(data) {
 				
-				//get current date for optional agoFormat-ing
+				//get current date (taking into consideration user's timezone) for optional agoFormat-ing
 				var nowDate = new Date();
+				var nowTime = nowDate.getTime();
+				localisedTimestamp = nowTime + (nowDate.getTimezoneOffset() * 60000);
+				nowDate = new Date(localisedTimestamp);
 				
 				if(data.rows.length){
 					//create a UL with LI children for each supporter
