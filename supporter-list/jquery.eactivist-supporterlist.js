@@ -3,7 +3,7 @@
  * Copyright (c) 2011 Dave Cranwell (http://davecranwell.com / @davecranwell)
  * Licensed under the MIT License.
  * 2011-12-13
- * version 1.1.
+ * version 1.1.2
  */
 
  (function($){
