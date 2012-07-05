@@ -3,7 +3,7 @@
  * Copyright (c) 2011 Dave Cranwell (http://davecranwell.com / @davecranwell)
  * Licensed under the MIT License.
  * 2011-12-13
- * version 1.1.2
+ * version 1.1.1
  */
 
  (function($){
@@ -50,12 +50,9 @@
 				
 				//get current date (taking into consideration user's timezone) for optional agoFormat-ing
 				var nowDate = new Date();
-				/* EN's API ought to return UTC timestamps but actually doesn't. Its returning EU/London e.g a timestamp which INCLUDES BST, which it shouldn't. This adjustment below is therefore not necessary.
-
 				var nowTime = nowDate.getTime();
 				localisedTimestamp = nowTime + (nowDate.getTimezoneOffset() * 60000);
 				nowDate = new Date(localisedTimestamp);
-				*/
 				
 				if(data.rows.length){
 					//create a UL with LI children for each supporter
