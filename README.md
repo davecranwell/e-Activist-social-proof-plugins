@@ -143,7 +143,7 @@ It would output something like
 <tr>
 <td>target</td>
 <td>0</td>
-<td>e-Activist’s does not request to know your target number of supporters. To create a thermometer plotting progress therefore requires you to manually specify this target number, using this option. If you have a campaign where your target number is 40,000, you’d specify <code class="inline-code">target: 40000 </code>(without commas to donate thousands).</td>
+<td>e-Activist’s does not request to know your target number of supporters. To create a thermometer plotting progress therefore requires you to manually specify this target number, using this option. If you have a campaign where your target number is 40,000, you’d specify <code class="inline-code">target: 40000 </code>(without commas to denote thousands).</td>
 </tr>
 <tr>
 <td>initialValue</td>
@@ -170,7 +170,7 @@ The contents of the element you choose with your jQuery selector should include 
 <table style="width: 100%;" border="0" cellpadding="5">
 <thead>
 <tr>
-<th>CLASS</th>
+<th>Class</th>
 <th>Description</th>
 </tr>
 </thead>
