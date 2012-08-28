@@ -78,7 +78,7 @@ These plugins are for use with jQuery and are used to access Engaging Network's 
 </tbody>
 </table>
 
-### Example
+### Usage example
 
 ```html
 <script src="jquery.eactivist-supporterlist.js"></script>
@@ -163,7 +163,7 @@ It would output something like
 </tbody>
 </table>
 
-### Markup
+### CSS
 
 The contents of the element you choose with your jQuery selector should include the following classes. The types of elements you add these classes to is up to you, but obviously the markup must be conducive to the general concept of a thermometer which has a body and a "level" within that body.
 
@@ -194,7 +194,7 @@ The contents of the element you choose with your jQuery selector should include 
 </tbody>
 </table>
 
-### Example
+### Usage example
 
 ```html
 <script src="jquery.eactivist-thermometer.js"></script>
