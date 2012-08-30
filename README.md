@@ -182,7 +182,7 @@ It would output something like
 <tr>
 <td>service</td>
 <td>EaEmailAOTarget</td>
-<td>Accepts 'EaEmailAOTarget' or 'NetDonor'. <strong>'EaEmailAOTarget'</strong> is for use with e-activist campaigns. <strong>'NetDonor'</strong> is for use with NetDonor fundraising campaigns.</td>
+<td><strong>Case Sensitive</strong>. Accepts 'EaEmailAOTarget' or 'NetDonor'. <strong>'EaEmailAOTarget'</strong> is for use with e-activist campaigns. <strong>'NetDonor'</strong> is for use with NetDonor fundraising campaigns.</td>
 </tr>
 <tr>
 <td>currencySymbol</td>
@@ -289,7 +289,7 @@ The contents of the element you choose with your jQuery selector should include 
 <td>service</td>
 <td>RollCall</td>
 <td>
-<p>Accepts 'RollCall' or 'FundraisingRollCall'. <strong>RollCall</strong> is for use with an e-activist campaign. <strong>FundraisingRollCall</strong> is for use with a NetDonor campaign.</p>
+<p><strong>Case Sensitive</strong>. Accepts 'RollCall' or 'FundraisingRollCall'. <strong>RollCall</strong> is for use with an e-activist campaign. <strong>FundraisingRollCall</strong> is for use with a NetDonor campaign.</p>
 </td>
 </tr>
 <tr>
