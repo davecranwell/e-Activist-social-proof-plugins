@@ -1,9 +1,10 @@
 /*!
- * E-Activist campaign thermometer plugin for jQuery
+ * Engaging Networks (E-Activist and Netdonor) thermometer plugin for jQuery
  * Copyright (c) 2011 Dave Cranwell (http://davecranwell.com / @davecranwell)
+ * Extended 2012 by Adam Lofting (http://adamlofting.com / @adamlofting)
  * Licensed under the MIT License.
  * 2011-09-05
- * version 1.0.1
+ * version 1.1.0
  */
 
  (function($){
@@ -15,7 +16,9 @@
 			'target':0,
 			'duration':2000,
 			'dataUrl':'',
-			'initialValue':0
+			'initialValue':0,
+			'service':'EaEmailAOTarget', // Accepts 'EaEmailAOTarget' or 'NetDonor'
+			'currency_symbol':'' // only required for NetDonor (&#163; = £)
 		}
 		
 		//necessary for thousands format
@@ -35,30 +38,38 @@
 			if(settings.dataUrl.length){
 				dataUrl = settings.dataUrl;
 			}else{
-				dataUrl = 'http://e-activist.com/ea-dataservice/data.service?service=EaEmailAOTarget&resultType=summary&contentType=json&token=' +settings.token+ '&campaignId=' +settings.campaignId;
+				dataUrl = 'http://e-activist.com/ea-dataservice/data.service?service=' +settings.service+ '&resultType=summary&contentType=json&token=' +settings.token+ '&campaignId=' +settings.campaignId+ '&callback=?';
 			}
 			
 			//get the data and iterate through it
 			$.get(dataUrl, function(data) {
+								
+				//switch between registration data or donation data depending on current use
+				if (settings.service == 'NetDonor') {
+					targetDataColumn = 'total amount donated';
+				} else {
+					// stardard campaigns thermometer
+					targetDataColumn = 'registrations';
+				}
 				
-				//find array location of 'registrations' col, which may change between campaigns/requests
+				//find array location of 'targetDataColumn' col, which may change between campaigns/requests
 				var regRow = -1;
 				for(j=0; j<data.rows[0].columns.length; j++){
-					if(data.rows[0].columns[j].name.toLowerCase() == 'registrations'){
+					if(data.rows[0].columns[j].name.toLowerCase() == targetDataColumn){
 						regRow=j;
 					}
 				}
 				
-				//total all the "registrations" across all campaign rows returned (if more than one campaign supplied)
+				//total all the registrations/donations across all campaign rows returned (if more than one campaign supplied)
 				//initialValue can be used to 'rig' the starting amount e.g to include figures from external sources
-				var totalCampaignsRegistrations = settings.initialValue;
+				var totalCampaignsCount = settings.initialValue;
 				for(i=0; i<data.rows.length; i++){
-					totalCampaignsRegistrations += parseInt(data.rows[i].columns[regRow].value);
+					totalCampaignsCount += parseInt(data.rows[i].columns[regRow].value);
 				}
 				
 				//calculate final size of "t_level" element
 				var thermBodyWidth = $('.t_body', $this).width();
-				var levelFinalWidthPercentage = Math.ceil(totalCampaignsRegistrations / parseInt(settings.target) * 100/1);
+				var levelFinalWidthPercentage = Math.ceil(totalCampaignsCount / parseInt(settings.target) * 100/1);
 				//reset to 100% if over 100%
 				if(levelFinalWidthPercentage > 100) levelFinalWidthPercentage=100;
 				var levelFinalWidthPx =  Math.ceil(parseInt(levelFinalWidthPercentage) / 100 * thermBodyWidth /1);
@@ -72,21 +83,21 @@
 				}
 				
 				//update counts/targets
-				$('.t_target', $this).html(formatNumberThousands(settings.target));
-				$('.t_current', $this).html(" " + formatNumberThousands(totalCampaignsRegistrations) + " ");
+				$('.t_target', $this).html(settings.currency_symbol + formatNumberThousands(settings.target));
+				$('.t_current', $this).html(settings.currency_symbol + formatNumberThousands(totalCampaignsCount) + " ");
 				
 				if(settings.duration){
 					//animate counter of registrations
 					var x = 1;
 					var interval = setInterval(
 						function(){
-							x = parseInt(x) + Math.ceil((totalCampaignsRegistrations/settings.duration) * 100);
+							x = parseInt(x) + Math.ceil((totalCampaignsCount/settings.duration) * 100);
 							
-							if(x >= totalCampaignsRegistrations){
-								x = totalCampaignsRegistrations; 
+							if(x >= totalCampaignsCount){
+								x = totalCampaignsCount; 
 								clearInterval(interval)
 							}
-							$('.t_body .t_current', $this).html(formatNumberThousands(x));
+							$('.t_body .t_current', $this).html(settings.currency_symbol + formatNumberThousands(x));
 						},
 					100);
 					

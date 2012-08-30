@@ -34,3 +34,7 @@
 			color:white;
 			margin-left:-80px;
 		}
+	.thermometer .t_target_pointer,
+	.thermometer .t_msg {
+		color: black;
+	}
