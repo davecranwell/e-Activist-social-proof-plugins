@@ -26,7 +26,7 @@ Date.prototype.isDST = function(){
 			'token':'',
 			'campaignId':0,
 			'count':5,
-			'format':'{forenames} from {town}, {datetime} {ago}',
+			'format':'{forename} from {town}, {datetime} {ago}',
 			'agoFormat':'datetime',
 			'agoText':'ago',
 			'agoFormatLabelsSingular': ['year', 'month', 'week', 'day', 'hour', 'minute', 'second'],
@@ -55,7 +55,7 @@ Date.prototype.isDST = function(){
 			if(settings.dataUrl.length){
 				dataUrl = settings.dataUrl;
 			}else{
-				dataUrl = 'http://e-activist.com/ea-dataservice/data.service?service=EaEmailAOTarget&startRow=0&endRow=' +settings.count+ '&contentType=json&token=' +settings.token+ '&campaignId=' +settings.campaignId+ '&callback=?';
+				dataUrl = 'http://e-activist.com/ea-dataservice/data.service?service=EaEmailAOTarget&startRow=0&endRow=' +settings.count+ '&contentType=json&token=' +settings.token+ '&campaignId=' +settings.campaignId
 			}
 
 			//get the data and iterate through it
