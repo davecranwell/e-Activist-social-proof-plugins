@@ -8,11 +8,10 @@ These plugins try to bridge that gap somewhat by providing [Social Proof](http:/
 
 These plugins are for use with jQuery and are used to access Engaging Network's API and generate stylable widgets for use on a charity's website.
 
-3 plugins currently exist
+2 plugins currently exist
 
 * [Supporter list](#recent-supporter-list) A dynamic list of the supporters who have recently used any given campaigning form or forms
 * [Thermometer](#thermometer) A "We have raised this much to rebuild the church roof" style thermometer to indicate the overall success of a campaign, relative to the campaign's goal
-* [RollCall](#rollcall) Similar to 'Supporter list' shown above but with the option of fundraising donation amounts from the NetDonor system (e.g. Bob just gave £10). This plugin requires less processing than 'Supporter list' but doesn't include information about how recently an action was taken.
 
 
 ## Recent Supporter List
@@ -159,17 +158,7 @@ It would output something like
 <tr>
 <td>dataUrl</td>
 <td>&nbsp;</td>
-<td>By default the plugin will pull data directly from e-Activist's API URL, but you may wish to have it pull from an alternate URL. The format of the data is expected to be exactly the same as e-Activist's output.</td>
-</tr>
-<tr>
-<td>service</td>
-<td>EaEmailAOTarget</td>
-<td>Accepts 'EaEmailAOTarget' or 'NetDonor'. <strong>'EaEmailAOTarget'</strong> is for use with e-activist campaigns. <strong>'NetDonor'</strong> is for use with NetDonor fundraising campaigns.</td>
-</tr>
-<tr>
-<td>currency_symbol</td>
-<td><em>empty string</em></td>
-<td>Used for NetDonor fundraising campaigns. Prepends a character to the numeric values output by the plugin (t_target and t_current). &amp;#163; is the HTML code for &#163;. </td>
+<td>By default the plugin will pull data directly from e-Activist's API URL, but you may wish to have it pull from an alternate URL. The format of the data is expect to be exactly the same as e-Activist's output.</td>
 </tr>
 </tbody>
 </table>
@@ -223,105 +212,5 @@ The contents of the element you choose with your jQuery selector should include 
 		<div class="t_level"></div><span class="t_current"></span>
 	</div>
 	<span class="t_current"></span>have signed up. Help us get to <span class="t_target"></span>
-</div>
-```
-
-
-
-
-## Rollcall
-
-### Options
-
-<table style="width: 100%;" border="0" cellpadding="5">
-<thead>
-<tr>
-<th>Option</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>token</td>
-<td></td>
-<td><strong>Mandatory</strong>. Your special API token provided by e-Activist. Enables access to the e-Activist data API.</td>
-</tr>
-<tr>
-<td>campaignId</td>
-<td></td>
-<td><strong>Mandatory.</strong> A single campaign ID or list of campaign IDs for which data should be retrieved (and aggregated, if relevant). The campaign ID can be found in the URL for each campaign e.g <a href="http://e-activist.com/ea-action/action?ea.client.id=xx&amp;ea.campaign.id=">http://e-activist.com/ea-action/action?ea.client.id=xx&amp;ea.campaign.id=</a><strong>xxxxx</strong></td>
-</tr>
-<td>dataUrl</td>
-<td>&nbsp;</td>
-<td>By default the plugin will pull data directly from e-Activist's API URL, but you may wish to have it pull from an alternate URL. The format of the data is expected to be exactly the same as e-Activist's output.</td>
-</tr>
-<tr>
-<td>format</td>
-<td>{firstName} from {country}{city} gave {currency}{amount}</td>
-<td>
-<p>The exact formatting of the output of each row of information. This can include HTML. The {placeholders} are used to retrieve specific fields from e-Activist's API.</p>
-</td>
-</tr>
-<tr>
-<td>dataSet</td>
-<td>1</td>
-<td>
-<p>This is an option from the Engaging Networks API. dataSet=1 returns first name and <strong>country</strong>. dataSet=2 returns first name and <strong>city</strong></p>
-</td>
-</tr>
-<tr>
-<td>count</td>
-<td>5</td>
-<td>
-<p>The number of results you want to see.</p>
-</td>
-</tr>
-<tr>
-<td>service</td>
-<td>RollCall</td>
-<td>
-<p>Accepts 'RollCall' or 'FundraisingRollCall'. <strong>RollCall</strong> is for use with an e-activist campaign. <strong>FundraisingRollCall</strong> is for use with a NetDonor campaign.</p>
-</td>
-</tr>
-<tr>
-<td>fields_to_format</td>
-<td>['firstname', 'city', 'country']</td>
-<td>
-<p>Useful for people and placenames as the data stored is not formatted by default. Enter the <strong>lower-case</strong> titles of the API fields you would like to format. Makes the whole word lower-case, then capitalises the first letter. E.g. 'FORD from guildford' would become 'Ford from Guildford'.</p>
-</td>
-</tr>
-<tr>
-<td>currency_symbols_to_replace</td>
-<td>{ 'GBP':'&#163;', 'EUR': '&#8364;'}</td>
-<td>
-<p>Only required for FundraisingRollCall. Converts the currency data as stored in the database (e.g. GBP) into an HTML encoded character for display on the page.</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-### Usage example
-
-```html
-<script src="jquery.eactivist-rollcall.js" type="text/javascript"></script>
-  <script type="text/javascript">
-  // <![CDATA[
-  $(function(){          
-        $('#fundraising_rollcall').eActivistRollcall({
-            token:'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx',
-            campaignId:'xxxxx,xxxxx,xxxxx',
-            count:3,
-            dataSet:2,
-            format:'<span class="name">{firstName}<\/span> from {country}{city} gave {currency}{amount} ',
-            service: 'FundraisingRollCall'              
-        })
-  });  
-  // ]]>
-</script>
-
-<div id="fundraising_rollcall">
-<h3>Latest donations</h3>
 </div>
 ```
