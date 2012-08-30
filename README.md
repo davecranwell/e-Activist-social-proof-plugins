@@ -10,9 +10,21 @@ These plugins are for use with jQuery and are used to access Engaging Network's 
 
 3 plugins currently exist
 
-* [Supporter list](#recent-supporter-list) A dynamic list of the supporters who have recently used any given campaigning form or forms
-* [Thermometer](#thermometer) A "We have raised this much to rebuild the church roof" style thermometer to indicate the overall success of a campaign, relative to the campaign's goal
-* [RollCall](#rollcall) Similar to 'Supporter list' shown above but with the option of fundraising donation amounts from the NetDonor system (e.g. Bob just gave £10). This plugin requires less processing than 'Supporter list' but doesn't include information about how recently an action was taken.
+<table style="width: 100%;" border="0" cellpadding="5">
+<tr>
+<td>[Supporter list](#recent-supporter-list)</td>
+<td>A dynamic list of the supporters who have recently used any given campaigning form or forms</td>
+</tr>
+<tr>
+<td>[Thermometer](#thermometer)</td>
+<td>A "We have raised this much to rebuild the church roof" style thermometer to indicate the overall success of a campaign, relative to the campaign's goal. This can be used to indicate total donations or total registrations/engagements.</td>
+</tr>
+<tr>
+<td>[RollCall](#rollcall)</td>
+<td>Similar to 'Supporter list' shown above but with the option of fundraising donation amounts from the NetDonor system (e.g. Bob just gave £10). This plugin requires less processing than 'Supporter list' but doesn't include information about how recently an action was taken.</td>
+</tr>
+</table>
+
 
 ## Global options
 
