@@ -11,13 +11,13 @@ These plugins are for use with jQuery and are used to access Engaging Network's 
 3 plugins currently exist
 
 #### [Recent supporter list](#recent-supporter-list-1)
-A dynamic list of the supporters who have recently used any given campaigning form or forms
+A dynamic list of the supporters who have recently used any given campaigning form or forms. Uses EN's EaDataCapture service.
 
 #### [Thermometer](#thermometer-1)
-A "We have raised this much to rebuild the church roof" style thermometer to indicate the overall success of a campaign, relative to the campaign's goal. This can be used to indicate total donations or total registrations/engagements.
+A "We have raised this much to rebuild the church roof" style thermometer to indicate the overall success of a campaign, relative to the campaign's goal. This can be used to indicate total donations or total registrations/engagements. Uses EN's EaEmailAOTarget or NetDonor services.
 
 #### [RollCall](#rollcall-1)
-Similar to 'Supporter list' shown above but with the option of fundraising donation amounts from the NetDonor system (e.g. Bob just gave £10). This plugin requires less processing than 'Supporter list' but doesn't include information about how recently an action was taken.
+Similar to 'Supporter list' shown above but with the option of fundraising donation amounts from the NetDonor system (e.g. Bob just gave £10). This plugin requires less processing than 'Supporter list' but doesn't include information about how recently an action was taken. Uses EN's two new services, RollCall and FundraisingRollCall, which appear to be intended for use by systems like the Recent Supporter List, but limited in the fields it returns.
 
 
 ## Global options
@@ -179,9 +179,9 @@ It would output something like
 <td>Accepts 'EaEmailAOTarget' or 'NetDonor'. <strong>'EaEmailAOTarget'</strong> is for use with e-activist campaigns. <strong>'NetDonor'</strong> is for use with NetDonor fundraising campaigns.</td>
 </tr>
 <tr>
-<td>currency_symbol</td>
+<td>currencySymbol</td>
 <td><em>empty string</em></td>
-<td>Used for NetDonor fundraising campaigns. Prepends a character to the numeric values output by the plugin (t_target and t_current). &amp;#163; is the HTML code for &#163;. </td>
+<td>Only relevant for NetDonor fundraising campaigns. Prepends a character to the numeric values output by the plugin (t_target and t_current). &amp;#163; is the HTML code for &#163;. </td>
 </tr>
 </tbody>
 </table>
@@ -287,14 +287,14 @@ The contents of the element you choose with your jQuery selector should include 
 </td>
 </tr>
 <tr>
-<td>fields_to_format</td>
+<td>titleCaseFields</td>
 <td>['firstname', 'city', 'country']</td>
 <td>
-<p>Useful for people and placenames as the data stored is not formatted by default. Enter the <strong>lower-case</strong> titles of the API fields you would like to format. Makes the whole word lower-case, then capitalises the first letter. E.g. 'FORD from guildford' would become 'Ford from Guildford'.</p>
+<p>Preformats the specified fields into Title Case (data from API isn't sanitised). Enter the <strong>lower-case</strong> titles of the API fields you would like to format. 'ford from GUILDford' would become 'Ford from Guildford'. Could also be done manually with CSS text-transform:capitalize.</p>
 </td>
 </tr>
 <tr>
-<td>currency_symbols_to_replace</td>
+<td>currencySymbolReplacements</td>
 <td>{ 'GBP':'&#163;', 'EUR': '&#8364;'}</td>
 <td>
 <p>Only required for FundraisingRollCall. Converts the currency data as stored in the database (e.g. GBP) into an HTML encoded character for display on the page.</p>
