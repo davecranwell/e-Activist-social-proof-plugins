@@ -156,7 +156,7 @@ It would output something like
 <tr>
 <td>target</td>
 <td>0</td>
-<td>e-Activist’s does not request to know your target number of supporters. To create a thermometer plotting progress therefore requires you to manually specify this target number, using this option. If you have a campaign where your target number is 40,000, you’d specify <code class="inline-code">target: 40000 </code>(without commas to denote thousands).</td>
+<td>Engaging Networks have no knowledge of your campaign targets so to create a thermometer plotting progress towards that target requires you to manually provide the target number, using this option. If you have a campaign where your target number is 40,000, you’d specify <code class="inline-code">target: 40000 </code>(without commas to denote thousands).</td>
 </tr>
 <tr>
 <td>initialValue</td>
