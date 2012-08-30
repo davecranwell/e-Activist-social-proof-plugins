@@ -15,6 +15,9 @@ These plugins are for use with jQuery and are used to access Engaging Network's 
 * [RollCall](#rollcall) Similar to 'Supporter list' shown above but with the option of fundraising donation amounts from the NetDonor system (e.g. Bob just gave £10). This plugin requires less processing than 'Supporter list' but doesn't include information about how recently an action was taken.
 
 ## Global options
+
+All plugins require these options defining as a bear minimum and are essential to working with the Engaging Networks data API.
+
 <table style="width: 100%;" border="0" cellpadding="5">
 <thead>
 <tr>
