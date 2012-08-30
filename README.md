@@ -14,11 +14,7 @@ These plugins are for use with jQuery and are used to access Engaging Network's 
 * [Thermometer](#thermometer) A "We have raised this much to rebuild the church roof" style thermometer to indicate the overall success of a campaign, relative to the campaign's goal
 * [RollCall](#rollcall) Similar to 'Supporter list' shown above but with the option of fundraising donation amounts from the NetDonor system (e.g. Bob just gave £10). This plugin requires less processing than 'Supporter list' but doesn't include information about how recently an action was taken.
 
-
-## Recent Supporter List
-
-## Options
-
+## Global options
 <table style="width: 100%;" border="0" cellpadding="5">
 <thead>
 <tr>
@@ -38,6 +34,23 @@ These plugins are for use with jQuery and are used to access Engaging Network's 
 <td></td>
 <td><strong>Mandatory.</strong> A single campaign ID or list of campaign IDs for which data should  be retrieved (and aggregated, if relevant). The campaign ID can be  found in the URL for each campaign e.g  <a href="http://e-activist.com/ea-action/action?ea.client.id=xx&amp;ea.campaign.id=">http://e-activist.com/ea-action/action?ea.client.id=xx&amp;ea.campaign.id=</a><strong>xxxxx</strong></td>
 </tr>
+</table>
+
+
+
+## Recent Supporter List
+
+### Options
+
+<table style="width: 100%;" border="0" cellpadding="5">
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>count</td>
 <td>5</td>
@@ -131,16 +144,6 @@ It would output something like
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>token</td>
-<td></td>
-<td><strong>Mandatory</strong>. Your special API token provided by e-Activist. Enables access to the e-Activist data API.</td>
-</tr>
-<tr>
-<td>campaignId</td>
-<td></td>
-<td><strong>Mandatory.</strong> A single campaign ID or list of campaign IDs for which data should be retrieved (and aggregated, if relevant). The campaign ID can be found in the URL for each campaign e.g <a href="http://e-activist.com/ea-action/action?ea.client.id=xx&amp;ea.campaign.id=">http://e-activist.com/ea-action/action?ea.client.id=xx&amp;ea.campaign.id=</a><strong>xxxxx</strong></td>
-</tr>
 <tr>
 <td>target</td>
 <td>0</td>
@@ -242,16 +245,6 @@ The contents of the element you choose with your jQuery selector should include 
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>token</td>
-<td></td>
-<td><strong>Mandatory</strong>. Your special API token provided by e-Activist. Enables access to the e-Activist data API.</td>
-</tr>
-<tr>
-<td>campaignId</td>
-<td></td>
-<td><strong>Mandatory.</strong> A single campaign ID or list of campaign IDs for which data should be retrieved (and aggregated, if relevant). The campaign ID can be found in the URL for each campaign e.g <a href="http://e-activist.com/ea-action/action?ea.client.id=xx&amp;ea.campaign.id=">http://e-activist.com/ea-action/action?ea.client.id=xx&amp;ea.campaign.id=</a><strong>xxxxx</strong></td>
-</tr>
 <td>dataUrl</td>
 <td>&nbsp;</td>
 <td>By default the plugin will pull data directly from e-Activist's API URL, but you may wish to have it pull from an alternate URL. The format of the data is expected to be exactly the same as e-Activist's output.</td>
