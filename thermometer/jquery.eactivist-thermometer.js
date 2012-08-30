@@ -4,6 +4,7 @@
  * Licensed under the MIT License.
  * 2011-09-05
  * version 1.0.1
+ * Test CRLF issue
  */
 
  (function($){
