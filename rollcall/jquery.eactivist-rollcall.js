@@ -6,7 +6,7 @@
  * - Lighter than eactivist-supporterlist if you don't need time of signatures
  * Licensed under the MIT License.
  * 2012-08-27
- * version 1.0.0
+ * version 1.0.1
  */
 
 (function($){
@@ -20,8 +20,8 @@
 			'dataSet': 1, // dataSet 1 returns first name and country. dataSet 2 returns first name and city
 			'count': 5,
 			'service':'RollCall', // accepts 'RollCall' or 'FundraisingRollCall',
-			'fields_to_format': ['firstname', 'city', 'country'],
-			'currency_symbols_to_replace': { 'GBP':'&#163;', 'EUR': '&#8364;'}
+			'titleCaseFields': ['firstname', 'city', 'country'],
+			'currencySymbolReplacements': { 'GBP':'&#163;', 'EUR': '&#8364;'}
 		}	
 
 		//simple function to make Capital Case
@@ -45,7 +45,7 @@
 			if(settings.dataUrl.length){
 				dataUrl = settings.dataUrl;
 			}else{
-				dataUrl = 'http://e-activist.com/ea-dataservice/data.service?service=' +settings.service+ '&dataSet=' +settings.dataSet+ '&contentType=json&token=' +settings.token+ '&campaignId=' +settings.campaignId+ '&callback=?';
+				dataUrl = 'http://e-activist.com/ea-dataservice/data.service?service=' + settings.service + '&dataSet=' + settings.dataSet + '&contentType=json&token=' + settings.token + '&campaignId=' + settings.campaignId + '&callback=?';
 			}
 
 			//get the data and iterate through it
@@ -75,13 +75,13 @@
 								
 								// format currency symbols
 								if (cleanFieldName == 'currency') {
-									if (replacement in settings.currency_symbols_to_replace) {
-										replacement = settings.currency_symbols_to_replace[replacement];
+									if (replacement in settings.currencySymbolReplacements) {
+										replacement = settings.currencySymbolReplacements[replacement];
 									}
 								}
 
-								// tidy up text display
-								if ($.inArray(cleanFieldName, settings.fields_to_format) >= 0) {
+								// convert fields to Title Case
+								if ($.inArray(cleanFieldName, settings.titleCaseFields) >= 0) {
 									replacement = capitaliseFirstLetter(replacement);
 								}
 

@@ -4,7 +4,7 @@
  * Extended 2012 by Adam Lofting (http://adamlofting.com / @adamlofting)
  * Licensed under the MIT License.
  * 2011-09-05
- * version 1.1.0
+ * version 1.1.1
  */
 
  (function($){
@@ -12,13 +12,13 @@
 		//default settings
 		var settings = {
 			'token':'',
-			'campaigId':0,
+			'campaignId':0,
 			'target':0,
 			'duration':2000,
 			'dataUrl':'',
 			'initialValue':0,
 			'service':'EaEmailAOTarget', // Accepts 'EaEmailAOTarget' or 'NetDonor'
-			'currency_symbol':'' // only required for NetDonor (&#163; = £)
+			'currencySymbol':'' // only required for NetDonor (&#163; = £)
 		}
 		
 		//necessary for thousands format
@@ -38,7 +38,7 @@
 			if(settings.dataUrl.length){
 				dataUrl = settings.dataUrl;
 			}else{
-				dataUrl = 'http://e-activist.com/ea-dataservice/data.service?service=' +settings.service+ '&resultType=summary&contentType=json&token=' +settings.token+ '&campaignId=' +settings.campaignId+ '&callback=?';
+				dataUrl = 'http://e-activist.com/ea-dataservice/data.service?service=' + settings.service + '&resultType=summary&contentType=json&token=' + settings.token + '&campaignId=' + settings.campaignId + '&callback=?';
 			}
 			
 			//get the data and iterate through it
@@ -83,8 +83,8 @@
 				}
 				
 				//update counts/targets
-				$('.t_target', $this).html(settings.currency_symbol + formatNumberThousands(settings.target));
-				$('.t_current', $this).html(settings.currency_symbol + formatNumberThousands(totalCampaignsCount) + " ");
+				$('.t_target', $this).html(settings.currencySymbol + formatNumberThousands(settings.target));
+				$('.t_current', $this).html(settings.currencySymbol + formatNumberThousands(totalCampaignsCount) + " ");
 				
 				if(settings.duration){
 					//animate counter of registrations
@@ -97,7 +97,7 @@
 								x = totalCampaignsCount; 
 								clearInterval(interval)
 							}
-							$('.t_body .t_current', $this).html(settings.currency_symbol + formatNumberThousands(x));
+							$('.t_body .t_current', $this).html(settings.currencySymbol + formatNumberThousands(x));
 						},
 					100);
 					
