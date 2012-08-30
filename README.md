@@ -10,7 +10,7 @@ These plugins are for use with jQuery and are used to access Engaging Network's 
 
 3 plugins currently exist
 
-#### [Supporter list](#recent-supporter-list)
+#### [Recent supporter list](#recent-supporter-list)
 A dynamic list of the supporters who have recently used any given campaigning form or forms
 
 #### [Thermometer](#thermometer)
@@ -47,7 +47,7 @@ All plugins require these options defining as a bear minimum and are essential t
 
 
 
-## Recent Supporter List
+## Recent supporter List
 
 ### Options
 
