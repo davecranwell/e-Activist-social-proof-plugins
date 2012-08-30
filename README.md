@@ -11,7 +11,7 @@ These plugins are for use with jQuery and are used to access Engaging Network's 
 3 plugins currently exist
 
 #### [Recent supporter list](#recent-supporter-list-1)
-A dynamic list of the supporters who have recently used any given campaigning form or forms. 
+A dynamic list of the supporters who have recently used any given campaigning form or forms. All data fields captured from a supporter are returned (unlike RollCall).
 
 (Uses EN's EaDataCapture service.)
 
