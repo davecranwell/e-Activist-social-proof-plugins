@@ -6,7 +6,7 @@
  * - Lighter than eactivist-supporterlist if you don't need time of signatures
  * Licensed under the MIT License.
  * 2012-08-27
- * version 1.0.1
+ * version 1.1.0
  */
 
 (function($){
