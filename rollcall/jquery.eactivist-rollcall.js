@@ -30,6 +30,11 @@
 			return newstring.charAt(0).toUpperCase() + newstring.slice(1);
 		}	
 
+		//function for randomising an array
+		function randomOrder(){
+			return (Math.round(Math.random())-0.5); 
+		}
+
 		return this.each(function() {
 			var $this = $(this);
 
@@ -54,6 +59,9 @@
 				if(data.rows.length){
 					//create a UL with LI children for each supporter
 					var listElement = $('<ul></ul>');
+
+					// randomise the order of returned data as it's recent, but not in date order
+					data.rows.sort(randomOrder);
 
 					for(i=0; i<data.rows.length; i++){
 						if (i < settings.count) {
