@@ -25,6 +25,10 @@ Similar to 'Supporter list' shown above but with the option of fundraising donat
 
 (Uses EN's two new services, RollCall and FundraisingRollCall, which appear to be intended for use by systems like the Recent Supporter List, but limited in the fields it returns.)
 
+## Examples
+Coming soon...
+
+WWF and Greenpeace both use these widgets on their ongoing campaigns.
 
 ## Global options
 
