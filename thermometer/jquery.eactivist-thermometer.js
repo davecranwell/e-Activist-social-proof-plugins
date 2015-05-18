@@ -19,7 +19,7 @@
 			'initialValue':0,
 			'service':'EaEmailAOTarget', // Accepts 'EaEmailAOTarget' or 'NetDonor'
 			'currencySymbol':'' // only required for NetDonor (&#163; = £)
-		}
+		};
 		
 		//necessary for thousands format
 		function formatNumberThousands(number) {
@@ -45,7 +45,7 @@
 			$.get(dataUrl, function(data) {
 								
 				//switch between registration data or donation data depending on current use
-				if (settings.service == 'NetDonor') {
+				if (settings.service === 'NetDonor') {
 					targetDataColumn = 'total amount donated';
 				} else {
 					// stardard campaigns thermometer
@@ -55,7 +55,7 @@
 				//find array location of 'targetDataColumn' col, which may change between campaigns/requests
 				var regRow = -1;
 				for(j=0; j<data.rows[0].columns.length; j++){
-					if(data.rows[0].columns[j].name.toLowerCase() == targetDataColumn){
+					if(data.rows[0].columns[j].name.toLowerCase() === targetDataColumn){
 						regRow=j;
 					}
 				}
@@ -95,7 +95,7 @@
 							
 							if(x >= totalCampaignsCount){
 								x = totalCampaignsCount; 
-								clearInterval(interval)
+								clearInterval(interval);
 							}
 							$('.t_body .t_current', $this).html(settings.currencySymbol + formatNumberThousands(x));
 						},

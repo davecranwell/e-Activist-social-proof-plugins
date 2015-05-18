@@ -20,7 +20,7 @@
 			background: #e8510a;
 			background: -moz-linear-gradient(top, #e8510a 0%, #e8510a 50%, #da4c09 51%, #da4c09 100%);
 			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8510a), color-stop(50%,#e8510a), color-stop(51%,#da4c09), color-stop(100%,#da4c09));
-			background: -webkit-linear-gradient(top, #e8510a 0%,#e8510a 50%,#da4c09 51%,#da4c09 100%)
+			background: -webkit-linear-gradient(top, #e8510a 0%,#e8510a 50%,#da4c09 51%,#da4c09 100%);
 			background: -o-linear-gradient(top, #e8510a 0%,#e8510a 50%,#da4c09 51%,#da4c09 100%);
 			background: -ms-linear-gradient(top, #e8510a 0%,#e8510a 50%,#da4c09 51%,#da4c09 100%);
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8510a', endColorstr='#da4c09',GradientType=0 );
